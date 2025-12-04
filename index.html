@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FinPJ - Seu dinheiro, mais simples. Dashboard financeiro.">
+    <meta name="theme-color" content="#121214">
+    <meta name="author" content="RM567500 - FIAP">
+    <title>FinPJ - Dashboard</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-white min-vh-100">
+    
+    <!-- Container Principal - Mobile First -->
+    <div class="mobile-container container-fluid px-0 mx-auto min-vh-100 bg-dark position-relative pb-5">
+        
+        <!-- Header com Bootstrap Navbar utilities -->
+        <header class="app-header sticky-top bg-dark bg-opacity-95 backdrop-blur">
+            <nav class="navbar navbar-dark px-3 py-3">
+                <div class="container-fluid px-0">
+                    <!-- Menu Button -->
+                    <button class="btn btn-link text-white text-decoration-none p-2 rounded-3 border-0" 
+                            type="button" 
+                            aria-label="Menu"
+                            data-bs-toggle="offcanvas" 
+                            data-bs-target="#sidebarMenu">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                    
+                    <!-- Title -->
+                    <span class="navbar-brand mb-0 h5 fw-semibold text-white position-absolute start-50 translate-middle-x">
+                        Olá, João
+                    </span>
+                    
+                    <!-- Notifications -->
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-link text-secondary text-decoration-none p-2 rounded-3 border-0 position-relative" 
+                                type="button"
+                                aria-label="Notificações"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span class="notification-badge position-absolute bg-danger rounded-circle"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="px-3 py-3">
+            
+            <!-- Card de Saldo - Usando Bootstrap Cards -->
+            <section class="balance-card card border-0 rounded-4 p-4 mb-4 shadow-lg position-relative overflow-hidden">
+                <div class="card-body p-0">
+                    <!-- Balance Header -->
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <p class="text-secondary small fw-medium text-uppercase mb-1 letter-spacing-1">
+                                Saldo disponível
+                            </p>
+                            <div class="d-flex align-items-center gap-3">
+                                <h2 class="display-6 fw-bold text-white mb-0 lh-1">
+                                    R$ 3.248,75
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gráfico com SVG -->
+                    <div class="balance-chart my-3">
+                        <svg viewBox="0 0 300 50" preserveAspectRatio="none" class="w-100 h-100">
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#22C55E;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#22C55E;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#chartGradient)"
+                                  d="M0,45 L30,38 L60,40 L90,30 L120,35 L150,25 L180,28 L210,18 L240,22 L270,12 L300,8 L300,50 L0,50 Z"/>
+                            <polyline fill="none" stroke="#22C55E" stroke-width="2.5"
+                                      stroke-linecap="round" stroke-linejoin="round"
+                                      points="0,45 30,38 60,40 90,30 120,35 150,25 180,28 210,18 240,22 270,12 300,8"/>
+                            <circle cx="300" cy="8" r="4" fill="#22C55E"/>
+                            <circle cx="300" cy="8" r="7" fill="#22C55E" opacity="0.3"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Card Button - Absolute positioned -->
+                <button class="btn card-btn-custom text-white fw-semibold rounded-3 py-2 px-2 position-absolute top-0 end-0 mt-4 me-4 d-flex align-items-center gap-2 small">
+                    <i class="bi bi-credit-card"></i>
+                    <span>Cartão</span>
+                </button>
+            </section>
+            
+            <!-- Ações Rápidas - Bootstrap Grid -->
+            <section class="quick-actions mb-4">
+                <div class="row row-cols-4 g-2 text-center">
+                    <!-- Pagar -->
+                    <div class="col">
+                        <a href="#" class="action-item text-decoration-none d-flex flex-column align-items-center p-3 rounded-4">
+                            <div class="action-icon rounded-circle border border-secondary bg-dark d-flex align-items-center justify-content-center mb-2 fs-5 text-white">
+                                <i class="bi bi-upc-scan"></i>
+                            </div>
+                            <span class="small text-secondary fw-medium">Pagar</span>
+                        </a>
+                    </div>
+                    <!-- Transferir -->
+                    <div class="col">
+                        <a href="#" class="action-item text-decoration-none d-flex flex-column align-items-center p-3 rounded-4">
+                            <div class="action-icon rounded-circle border border-secondary bg-dark d-flex align-items-center justify-content-center mb-2 fs-5 text-white">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </div>
+                            <span class="small text-secondary fw-medium">Transferir</span>
+                        </a>
+                    </div>
+                    <!-- Depositar -->
+                    <div class="col">
+                        <a href="#" class="action-item text-decoration-none d-flex flex-column align-items-center p-3 rounded-4">
+                            <div class="action-icon rounded-circle border border-secondary bg-dark d-flex align-items-center justify-content-center mb-2 fs-5 text-white">
+                                <i class="bi bi-plus-lg"></i>
+                            </div>
+                            <span class="small text-secondary fw-medium">Depositar</span>
+                        </a>
+                    </div>
+                    <!-- Serviços -->
+                    <div class="col">
+                        <a href="#" class="action-item text-decoration-none d-flex flex-column align-items-center p-3 rounded-4">
+                            <div class="action-icon rounded-circle border border-secondary bg-dark d-flex align-items-center justify-content-center mb-2 fs-5 text-white">
+                                <i class="bi bi-grid"></i>
+                            </div>
+                            <span class="small text-secondary fw-medium">Serviços</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção de Movimentações -->
+            <section class="transactions-section rounded-top-4 pt-4 pb-5 mx-n3 px-3">
+                <!-- Section Header -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="h6 fw-semibold text-white mb-0">Movimentações</h3>
+                    <a href="#" class="btn btn-link text-primary text-decoration-none small fw-medium px-3 py-1 rounded-3">
+                        Ver tudo
+                    </a>
+                </div>
+                
+                <!-- Lista de Transações - Bootstrap List Group -->
+                <div class="list-group list-group-flush gap-2">
+                    
+                    <!-- Transação 1 - Entrada (Salário) -->
+                    <div class="transaction-item list-group-item bg-dark border-0 rounded-3 p-3 d-flex align-items-center gap-3">
+                        <div class="transaction-icon entrada rounded-3 d-flex align-items-center justify-content-center flex-shrink-0 fs-5">
+                            <i class="bi bi-arrow-down-left"></i>
+                        </div>
+                        <div class="flex-grow-1 min-width-0">
+                            <p class="mb-1 fw-semibold text-white text-truncate">Salário</p>
+                            <span class="small text-muted d-flex align-items-center gap-1">
+                                <i class="bi bi-clock"></i>
+                                Hoje
+                            </span>
+                        </div>
+                        <span class="fw-bold text-success text-nowrap">+ R$ 3.500,00</span>
+                    </div>
+                    
+                    <!-- Transação 2 - Saída (Supermercado) -->
+                    <div class="transaction-item list-group-item bg-dark border-0 rounded-3 p-3 d-flex align-items-center gap-3">
+                        <div class="transaction-icon saida rounded-3 d-flex align-items-center justify-content-center flex-shrink-0 fs-5">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                        <div class="flex-grow-1 min-width-0">
+                            <p class="mb-1 fw-semibold text-white text-truncate">Supermercado</p>
+                            <span class="small text-muted d-flex align-items-center gap-1">
+                                <i class="bi bi-clock"></i>
+                                Ontem
+                            </span>
+                        </div>
+                        <span class="fw-bold text-danger text-nowrap">- R$ 152,30</span>
+                    </div>
+                    
+                    <!-- Transação 3 - Saída (Netflix) -->
+                    <div class="transaction-item list-group-item bg-dark border-0 rounded-3 p-3 d-flex align-items-center gap-3">
+                        <div class="transaction-icon saida rounded-3 d-flex align-items-center justify-content-center flex-shrink-0 fs-5">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                        <div class="flex-grow-1 min-width-0">
+                            <p class="mb-1 fw-semibold text-white text-truncate">Netflix</p>
+                            <span class="small text-muted d-flex align-items-center gap-1">
+                                <i class="bi bi-clock"></i>
+                                02/12
+                            </span>
+                        </div>
+                        <span class="fw-bold text-danger text-nowrap">- R$ 55,90</span>
+                    </div>
+                    
+                    <!-- Transação 4 - Entrada (Pix Maria) -->
+                    <div class="transaction-item list-group-item bg-dark border-0 rounded-3 p-3 d-flex align-items-center gap-3">
+                        <div class="transaction-icon entrada rounded-3 d-flex align-items-center justify-content-center flex-shrink-0 fs-5">
+                            <i class="bi bi-arrow-down-left"></i>
+                        </div>
+                        <div class="flex-grow-1 min-width-0">
+                            <p class="mb-1 fw-semibold text-white text-truncate">Pix - Maria</p>
+                            <span class="small text-muted d-flex align-items-center gap-1">
+                                <i class="bi bi-clock"></i>
+                                01/12
+                            </span>
+                        </div>
+                        <span class="fw-bold text-success text-nowrap">+ R$ 150,00</span>
+                    </div>
+                    
+                </div>
+            </section>
+            
+        </main>
+        
+        <!-- Botão Flutuante Nova Transferência - Bootstrap Button -->
+        <div class="floating-btn-wrapper position-fixed bottom-0 start-50 translate-middle-x p-3 pb-4">
+            <button class="btn btn-transfer btn-primary btn-lg w-100 rounded-3 py-3 d-flex align-items-center justify-content-between fw-semibold text-white">
+                <span class="fs-6">Nova transferência</span>
+                <div class="btn-arrow rounded-3 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </button>
+        </div>
+        
+        <!-- Offcanvas Sidebar Menu (Bootstrap Component) -->
+        <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header border-bottom border-secondary">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <span class="fw-bold">JO</span>
+                    </div>
+                    <div>
+                        <h5 class="offcanvas-title mb-0 fw-semibold" id="sidebarMenuLabel">João Silva</h5>
+                        <small class="text-secondary">joao@email.com</small>
+                    </div>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-dark text-white border-secondary py-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-house fs-5 text-primary"></i>
+                        <span>Início</span>
+                        <span class="badge bg-primary rounded-pill ms-auto">Atual</span>
+                    </li>
+                    <li class="list-group-item bg-dark text-white border-secondary py-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-credit-card fs-5 text-secondary"></i>
+                        <span>Meus Cartões</span>
+                    </li>
+                    <li class="list-group-item bg-dark text-white border-secondary py-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-receipt fs-5 text-secondary"></i>
+                        <span>Extrato</span>
+                    </li>
+                    <li class="list-group-item bg-dark text-white border-secondary py-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-piggy-bank fs-5 text-secondary"></i>
+                        <span>Investimentos</span>
+                    </li>
+                    <li class="list-group-item bg-dark text-white border-secondary py-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-gear fs-5 text-secondary"></i>
+                        <span>Configurações</span>
+                    </li>
+                    <li class="list-group-item bg-dark text-white border-secondary py-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-question-circle fs-5 text-secondary"></i>
+                        <span>Ajuda</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-3 border-top border-secondary">
+                <button class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-box-arrow-left"></i>
+                    Sair da conta
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Bootstrap 5 JS Bundle (inclui Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Inicializar Tooltips do Bootstrap -->
+    <script>
+        // Inicializa todos os tooltips do Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+    
+</body>
+</html>

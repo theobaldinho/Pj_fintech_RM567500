@@ -1,0 +1,245 @@
+/* ===================================
+   FinPJ - Fintech Styles
+   Projeto FIAP - RM567500
+   Customizações além do Bootstrap
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bs-body-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --bs-body-bg: #121214;
+    --bs-body-color: #FFFFFF;
+    --bs-primary: #5B7FFF;
+    --bs-primary-rgb: 91, 127, 255;
+    --bs-success: #22C55E;
+    --bs-success-rgb: 34, 197, 94;
+    --bs-danger: #EF4444;
+    --bs-danger-rgb: 239, 68, 68;
+    --bs-dark: #1E1E20;
+    --bs-secondary: #A1A1AA;
+    --bs-border-color: #27272A;
+    --bg-card: #1E1E20;
+    --bg-card-hover: #252528;
+    --text-muted-custom: #71717A;
+    --success-bg: rgba(34, 197, 94, 0.15);
+    --danger-bg: rgba(239, 68, 68, 0.15);
+    --primary-light: rgba(91, 127, 255, 0.15);
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0a0a0b;
+    --bs-tertiary-bg: #1E1E20;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0a0a0b !important;
+}
+
+/* ===================================
+   Container Mobile
+   =================================== */
+.mobile-container {
+    max-width: 420px;
+    background-color: #121214 !important;
+}
+
+/* ===================================
+   Header - Customizações mínimas
+   =================================== */
+.notification-badge {
+    width: 10px;
+    height: 10px;
+    top: 2px;
+    right: 2px;
+    border: 2px solid var(--bs-body-bg);
+}
+
+/* ===================================
+   Card de Saldo - Estilo único do app
+   =================================== */
+.balance-card {
+    background: linear-gradient(145deg, #1a365d 0%, #2d4a7c 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.balance-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.balance-chart {
+    height: 50px;
+}
+
+.balance-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+.card-btn-custom {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-btn-custom:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.balance-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* ===================================
+   Ações Rápidas - Ícones circulares
+   =================================== */
+.action-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    transition: all 0.2s ease;
+}
+
+.action-item {
+    transition: all 0.15s ease;
+}
+
+.action-item:hover {
+    transform: translateY(-2px);
+}
+
+.action-item:hover .action-icon {
+    border-color: var(--bs-primary) !important;
+    background-color: var(--primary-light) !important;
+    color: var(--bs-primary) !important;
+}
+
+/* ===================================
+   Seção de Movimentações
+   =================================== */
+.transactions-section {
+    background-color: var(--bg-card);
+}
+
+/* Transaction items */
+.transaction-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+}
+
+.transaction-icon.entrada {
+    background-color: var(--success-bg);
+    color: var(--bs-success);
+}
+
+.transaction-icon.saida {
+    background-color: var(--danger-bg);
+    color: var(--bs-danger);
+}
+
+.transaction-item {
+    transition: all 0.15s ease;
+}
+
+.transaction-item:hover {
+    background-color: var(--bg-card-hover) !important;
+    transform: translateX(4px);
+}
+
+/* ===================================
+   Botão Flutuante
+   =================================== */
+.floating-btn-wrapper {
+    background: linear-gradient(to top, #121214 80%, transparent 100%);
+    max-width: 420px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.btn-transfer {
+    background: linear-gradient(135deg, var(--bs-primary) 0%, #4a6de0 100%);
+    box-shadow: 0 4px 15px rgba(91, 127, 255, 0.4);
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-transfer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(91, 127, 255, 0.5);
+    background: linear-gradient(135deg, #4a6de0 0%, var(--bs-primary) 100%);
+}
+
+.btn-arrow {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===================================
+   Responsividade
+   =================================== */
+@media (min-width: 768px) {
+    .mobile-container {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        border: 1px solid var(--bs-border-color);
+        border-radius: 24px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    
+    .floating-btn-wrapper {
+        position: absolute;
+        border-radius: 0 0 24px 24px;
+    }
+}
+
+/* ===================================
+   Estilos para Página PDF
+   =================================== */
+.pdf-logo {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    background: linear-gradient(135deg, var(--bs-primary) 0%, #4a6de0 100%);
+    box-shadow: 0 8px 25px rgba(91, 127, 255, 0.4);
+}
+
+.pdf-link-box {
+    background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 100%);
+}
+
+.pdf-check-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background-color: var(--success-bg);
+    color: var(--bs-success);
+}
+
+@media print {
+    body {
+        background-color: white !important;
+        color: #1a1a1a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}
